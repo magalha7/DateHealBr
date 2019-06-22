@@ -16,6 +16,7 @@ E-mail: italo.ufsj@gmail.com
 <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link rel="stylesheet" type="text/css" href="css/style11.css" /><!-- menu style sheet -->
 <link href="css/style.css" type="text/css" rel="stylesheet" media="all"> 
+<link href="css/bootstrap-datepicker.css" rel="stylesheet">
 <!-- //Custom Theme files -->
 <!-- font-awesome icons -->
 <link href="css/font-awesome.css" rel="stylesheet" type="text/css" media="all" /> 
@@ -149,6 +150,28 @@ E-mail: italo.ufsj@gmail.com
 	<h6 class="tittle-w3layouts">Tire foto do seu cartão de vacina. Clicando no botao abaixo.</h6>
 		<div class="blog-grid-w3-agileits">
 			<div class="blog-img1-agileits-w3layouts">
+			</div>
+			<h5>Para qual posto de Saude você deseja enviar o cartão? </h5>
+			<select class="form-control form-control-sm">
+				<option value="enfer">Unidade de Saúde do Matosinhos</option>
+				<option value="paci">Unidade de Saude do Guarda Mor</option>
+				<option value="paci">Unidade de Saude do Tejuco</option>
+				<option value="paci">Unidade de Saude do Senhor dos Montes</option>
+			</select>
+			<h5>Selecione uma data e hora em que você deseja-se vacinar.</h5>
+			<div class="container">
+				<div class="row">
+					<div class='col-sm-6'>
+						<div class="form-group">
+							<div class='input-group date' id='datetimepicker1'>
+								<input type='text' class="form-control" />
+								<span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="blog-info-w3layouts">
 				<a href="#"class="blog-more-agile" >Tirar Foto</a>
@@ -288,12 +311,23 @@ E-mail: italo.ufsj@gmail.com
 <!--//menu script-->
 <!-- banner -->
 <script type='text/javascript' src='js/jquery.easing.1.3.js'></script> 
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="locales/bootstrap-datepicker.pt-BR.min.js"></script>
 <!-- //banner -->
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
 			event.preventDefault();
 			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+
+<script type="text/javascript">
+	$(function () {
+		$('#datetimepicker1').datetimepicker({
+			format: "dd/mm/yyyy",
+			language: "pt-BR"
 		});
 	});
 </script>
